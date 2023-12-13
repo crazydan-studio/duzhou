@@ -28,4 +28,6 @@
 
 ## 捐助
 
-<img src="./assets/img/donate/alipay.jpg" width="200px"/><img src="./assets/img/donate/wechat.png" width="200px"/>
+| 支付宝收款 | 微信收款 |
+| -- | -- |
+| <img src="./assets/img/donate/alipay.jpg" width="200px"/> | <img src="./assets/img/donate/wechat.png" width="200px"/> |
