@@ -28,5 +28,5 @@
 
 ## 捐助
 
-<img src="./assets/img/donate/alipay.jpg" width="200px"/>
-<img src="./assets/img/donate/wechat.png" width="200px"/>
+<img src="./assets/img/donate/alipay.jpg" height="300px"/>
+<img src="./assets/img/donate/wechat.png" height="300px"/>
