@@ -21,3 +21,12 @@
   而无需受困于各种复杂的技术和部署架构，也不用再面对那难以撼动的**屎山代码**
 
 让我们一起**滚蛋**吧！
+
+## 许可协议
+
+[Apache 2.0](./LICENSE)
+
+## 捐助
+
+<img href="./assets/img/donate/alipay.png" width="200"/>
+<img href="./assets/img/donate/wechat.png" width="200"/>
