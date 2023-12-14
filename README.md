@@ -1,15 +1,15 @@
-滚蛋
+渡舟
 ======================
 
 ## 简介
 
 基于[可逆计算](https://zhuanlan.zhihu.com/p/64004026)理论
 及其[框架代码](https://github.com/entropy-cloud/nop-entropy)搭建的
-全功能**应用装配平台**。
+全功能型**应用支撑平台**。
 
 ## 文档
 
-- [平台文档](https://gundan.crazydan.io/docs)
+- [平台文档](https://duzhou.crazydan.io/docs)
 
 ## 许可协议
 
@@ -22,10 +22,10 @@
 
 ## 捐助
 
-**注**：捐助请添加备注信息`滚蛋平台`。
+**注**：捐助请添加备注信息`渡舟平台`。
 
-捐助信息请查看：[捐助列表](https://gundan.crazydan.io/docs/donates)
+捐助信息请查看：[捐助列表](https://duzhou.crazydan.io/docs/donates)
 
 | 支付宝收款 | 微信收款 |
 | -- | -- |
-| <img src="https://github.com/crazydan-studio/gundan.crazydan.io/blob/master/static/img/donate/alipay.jpg?raw=true" width="200px"/> | <img src="https://github.com/crazydan-studio/gundan.crazydan.io/blob/master/static/img/donate/wechat.png?raw=true" width="200px"/> |
+| <img src="https://github.com/crazydan-studio/duzhou.crazydan.io/blob/master/static/img/donate/alipay.jpg?raw=true" width="200px"/> | <img src="https://github.com/crazydan-studio/duzhou.crazydan.io/blob/master/static/img/donate/wechat.png?raw=true" width="200px"/> |
