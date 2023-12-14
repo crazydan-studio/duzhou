@@ -1,6 +1,8 @@
 渡舟
 ======================
 
+<img src="https://duzhou.crazydan.io/img/logo.svg" width="172px" />
+
 ## 简介
 
 基于[可逆计算](https://zhuanlan.zhihu.com/p/64004026)理论
