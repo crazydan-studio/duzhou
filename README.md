@@ -5,9 +5,9 @@
 
 ## 简介
 
-基于[可逆计算](https://zhuanlan.zhihu.com/p/64004026)理论
-及其[框架代码](https://github.com/entropy-cloud/nop-entropy)搭建的
-全功能型**应用支撑平台**。
+基于 [可逆计算](https://zhuanlan.zhihu.com/p/64004026) 理论及其
+[框架代码](https://github.com/entropy-cloud/nop-entropy)
+搭建的全功能型**应用生产平台**。
 
 ## 文档
 
@@ -24,9 +24,9 @@
 
 ## 捐助
 
-**注**：捐助请添加备注信息`渡舟平台`。
+**注**：捐助请添加备注信息 `渡舟平台`。
 
-详细的捐助清单请查看[这里](https://duzhou.crazydan.io/docs/donates)。
+详细的捐助清单请查看 [这里](https://duzhou.crazydan.io/docs/donates)。
 
 | 支付宝收款 | 微信收款 |
 | -- | -- |
