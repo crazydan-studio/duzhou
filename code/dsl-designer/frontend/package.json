@@ -11,6 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@logicflow/core": "^1.2.18",
+    "@logicflow/extension": "^1.2.19",
     "amis": "^6.0.0",
     "vue": "^3.3.11"
   },

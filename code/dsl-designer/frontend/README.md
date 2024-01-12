@@ -31,11 +31,13 @@ npm install
 npm run dev
 ```
 
-- 安装第三方依赖
+- 安装第三方依赖和插件
 
 ```bash
 npm install \
-    amis@6.0.0
+    amis@6.0.0 \
+    @logicflow/core \
+    @logicflow/extension
 ```
 
 ## 参考
@@ -45,3 +47,4 @@ npm install \
   - [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
 - [Vite 中文文档](https://cn.vitejs.dev/guide/)
 - [AMIS 文档](https://baidu.github.io/amis/)
+- [LogicFlow 文档](https://site.logic-flow.cn/docs/#/zh/guide/start)
