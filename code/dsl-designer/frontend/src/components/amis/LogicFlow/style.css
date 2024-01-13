@@ -1,0 +1,31 @@
+.lf-mini-map-header,
+.lf-mini-map-close {
+  visibility: hidden;
+}
+
+.lf-mini-map {
+  position: absolute;
+  padding-top: 0;
+  right: 5px;
+  top: 5px;
+  height: 120px;
+  box-shadow: 0 1px 4px #0000004d;
+  background-color: #fffc;
+}
+
+.lf-control {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, .8);
+  box-shadow: 0 1px 4px #0000004d;
+  border-radius: 5px;
+  user-select: none;
+  padding: 5px 0;
+  margin: auto;
+  right: auto;
+}

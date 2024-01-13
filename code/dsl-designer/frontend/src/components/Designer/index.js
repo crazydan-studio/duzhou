@@ -25,25 +25,24 @@ export function mount(dom) {
         nodes: [
           {
             id: '1',
-            type: 'rect',
-            x: 100,
+            type: 'start-node',
+            x: 200,
             y: 100,
-            text: '节点1'
+            text: 'Start'
           },
           {
             id: '2',
-            type: 'circle',
-            x: 300,
+            type: 'fetch-node',
+            x: 400,
             y: 200,
-            text: '节点2'
+            text: 'Fetch'
           }
         ],
         edges: [
           {
             sourceNodeId: '1',
             targetNodeId: '2',
-            type: 'polyline',
-            text: '连线'
+            type: 'flow-link'
           }
         ]
       }
