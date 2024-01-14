@@ -4,7 +4,7 @@ class FlowLinkModel extends BezierEdgeModel {
   getEdgeStyle() {
     const style = super.getEdgeStyle();
     style.strokeWidth = 2;
-    style.stroke = this.isSelected ? '#ff7f0e' : '#000';
+    style.stroke = this.isSelected ? '#ff7f0e' : '#999';
     return style;
   }
 }

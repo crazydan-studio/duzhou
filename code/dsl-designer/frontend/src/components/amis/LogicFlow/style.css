@@ -9,8 +9,9 @@
   right: 5px;
   top: 5px;
   height: 120px;
+  border: none;
+  border-radius: 5px;
   box-shadow: 0 1px 4px #0000004d;
-  background-color: #fffc;
 }
 
 .lf-control {
