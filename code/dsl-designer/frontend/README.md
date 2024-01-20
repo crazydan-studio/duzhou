@@ -48,3 +48,6 @@ npm install \
 - [Vite 中文文档](https://cn.vitejs.dev/guide/)
 - [AMIS 文档](https://baidu.github.io/amis/)
 - [LogicFlow 文档](https://site.logic-flow.cn/docs/#/zh/guide/start)
+  - [LogicFlow Vue3 应用支持](https://github.com/han-feng/logicflow-vue)
+  - [Logicflow Demo](https://github.com/hmilin/logicflow-demo)：
+    自定义连线规则、基于 `PolylineEdge` 实现转折点带弧度的折线
