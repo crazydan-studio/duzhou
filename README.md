@@ -7,7 +7,7 @@
 
 基于 [可逆计算](https://zhuanlan.zhihu.com/p/64004026) 理论及其
 [框架代码](https://github.com/entropy-cloud/nop-entropy)
-搭建的全功能型**应用生产平台**。
+搭建的自运维、自监控、可演化的**全功能型应用平台**。
 
 ## 文档
 
