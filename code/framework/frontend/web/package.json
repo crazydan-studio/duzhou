@@ -1,0 +1,27 @@
+{
+  "name": "duzhou-web",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "渡舟平台 Web 前端",
+  "license": "LGPL-3.0",
+  "author": {
+    "name": "flytreeleft",
+    "email": "flytreeleft@crazydan.org",
+    "url": "https://flytreeleft.org/"
+  },
+  "contributors": [],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "amis": "^6.0.0",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "postcss-image-inliner": "^7.0.1",
+    "vite": "^5.0.8"
+  }
+}

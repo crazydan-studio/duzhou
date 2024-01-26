@@ -1,0 +1,78 @@
+<!--
+  ~ 渡舟平台 - 致力于构建自运维、自监控、可演化的全功能型应用平台
+  ~ Copyright (C) 2024 Crazydan Studio <https://studio.crazydan.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Lesser General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public License
+  ~ along with this program.
+  ~ If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
+  -->
+
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>渡舟平台</title>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        min-width: 0;
+        min-height: 0;
+        /* 修改默认的 AMIS 加载动画: https://baidu.github.io/amis/zh-CN/style/css-vars#%E5%9B%BE%E7%89%87 */
+        /* 通过插件 postcss-image-inliner 进行内联替换：文件路径为项目根路径的相对地址 */
+        --Spinner-bg: url(./public/loading.svg);
+      }
+
+      /** Start: 通过 ::after 显示开屏动画，再在渲染结束后隐藏动画，从而确保开屏动画可以渐进消失 */
+      body::after {
+        z-index: 10000;
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+        transition-delay: 0.2s;
+
+        pointer-events: none; /* 禁用鼠标事件 */
+
+        /* 配置开屏动画 */
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        content: '';
+        background-image: var(--Spinner-bg);
+        background-color: white; /* 遮挡底部元素 */
+        background-position: center;
+        background-size: 12rem;
+        background-repeat: no-repeat;
+      }
+
+      body > * {
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+      }
+      /** End: 在渲染结束前，都以透明方式隐藏元素 */
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

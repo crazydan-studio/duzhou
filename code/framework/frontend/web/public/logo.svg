@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- https://www.iconfinder.com/icons/1342928/citycons_sea_ship_icon -->
+
+<svg
+   data-name="Layer 1"
+   id="Layer_1"
+   viewBox="0 0 130 130"
+   version="1.1"
+   sodipodi:docname="1342928_citycons_sea_ship_icon.svg"
+   width="130"
+   height="130"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="5.64"
+     inkscape:cx="75"
+     inkscape:cy="75"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1{fill:#13818d;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#44c2c7;}.cls-4{fill:#fff;}.cls-5{fill:#30a7ad;}</style>
+    <clipPath
+       id="clip-path">
+      <circle
+         class="cls-1"
+         cx="75"
+         cy="75"
+         r="65"
+         id="circle1" />
+    </clipPath>
+  </defs>
+  <title
+     id="title1" />
+  <g
+     id="g7"
+     transform="translate(-10,-10)">
+    <circle
+       class="cls-1"
+       cx="75"
+       cy="75"
+       r="65"
+       id="circle2" />
+    <g
+       class="cls-2"
+       clip-path="url(#clip-path)"
+       id="g6">
+      <path
+         class="cls-3"
+         d="M 131.73,83.81 A 21.09,21.09 0 0 1 112.81,72 21.09,21.09 0 0 1 75.08,72.22 21.09,21.09 0 0 1 37.8,72.87 21.1,21.1 0 0 1 -1.5,66.07 h -0.3 v 40.6 H 152.84 V 66.1 h -0.3 a 21.11,21.11 0 0 1 -20.81,17.71 z"
+         id="path2" />
+      <path
+         class="cls-4"
+         d="m 107.53,70.3 a 0.86,0.86 0 0 0 -0.49,-0.47 L 75.52,57.95 a 0.88,0.88 0 0 0 -0.61,0 L 43.15,69.83 A 0.87,0.87 0 0 0 42.68,71 c 0.13,0.26 13.12,26.38 17.7,38.91 a 0.87,0.87 0 0 0 0.82,0.57 H 91 a 0.87,0.87 0 0 0 0.82,-0.57 c 3.67,-10.07 15.6,-38.67 15.72,-39 a 0.87,0.87 0 0 0 -0.01,-0.61 z"
+         id="path3" />
+      <polygon
+         class="cls-5"
+         points="76.14,97.55 74.13,97.55 75.14,73.28 "
+         id="polygon3" />
+      <path
+         class="cls-5"
+         d="M 131.73,102.36 A 21.09,21.09 0 0 1 112.81,90.58 21.08,21.08 0 0 1 75.08,90.8 21.09,21.09 0 0 1 37.8,91.45 21.1,21.1 0 0 1 -1.5,84.65 h -0.3 v 40.6 h 154.64 v -40.6 h -0.3 a 21.11,21.11 0 0 1 -20.81,17.71 z"
+         id="path4" />
+      <path
+         class="cls-1"
+         d="m 131.73,124.08 a 21.08,21.08 0 0 1 -18.92,-11.78 21.08,21.08 0 0 1 -37.73,0.22 21.09,21.09 0 0 1 -37.28,0.65 21.1,21.1 0 0 1 -39.3,-6.8 H -1.8 V 147 h 154.64 v -40.6 h -0.3 a 21.11,21.11 0 0 1 -20.81,17.68 z"
+         id="path5" />
+      <path
+         class="cls-4"
+         d="m 96.68,44.6 h -5.2 v -1.8 a 0.65,0.65 0 0 0 -0.65,-0.65 h -14 V 38 a 0.65,0.65 0 0 0 -0.65,-0.65 h -0.8 v -5.18 l 9.14,-3.32 -9.89,-2.26 V 37.32 H 74 a 0.65,0.65 0 0 0 -0.65,0.65 v 4.17 h -14 a 0.65,0.65 0 0 0 -0.65,0.65 v 1.8 h -5.2 a 0.65,0.65 0 0 0 -0.65,0.65 v 9.29 a 0.65,0.65 0 0 0 0.65,0.65 h 5.2 v 6.38 L 74.9,55.5 a 0.88,0.88 0 0 1 0.61,0 l 16,6 v -6.31 h 5.21 a 0.65,0.65 0 0 0 0.65,-0.65 V 45.25 A 0.65,0.65 0 0 0 96.68,44.6 Z m -25.46,7.77 a 0.65,0.65 0 0 1 -0.65,0.65 H 62 A 0.65,0.65 0 0 1 61.35,52.37 V 47.51 A 0.65,0.65 0 0 1 62,46.86 h 8.57 a 0.65,0.65 0 0 1 0.65,0.65 v 4.85 z m 17.4,0 A 0.65,0.65 0 0 1 88,53 H 79.4 A 0.65,0.65 0 0 1 78.75,52.35 V 47.51 A 0.65,0.65 0 0 1 79.4,46.86 H 88 a 0.65,0.65 0 0 1 0.65,0.65 v 4.85 z"
+         id="path6" />
+    </g>
+  </g>
+</svg>
