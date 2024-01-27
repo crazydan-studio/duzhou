@@ -25,8 +25,6 @@ import 'amis/sdk/iconfont.css';
 // https://baidu.github.io/amis/zh-CN/style/index
 import 'amis/lib/helper.css';
 
-import { ACTION_APP_INIT } from '../../amis/action/AppInit';
-
 const amis = amisRequire('amis/embed');
 
 export function mount(dom) {
@@ -38,7 +36,12 @@ export function mount(dom) {
       init: {
         actions: [
           {
-            actionType: ACTION_APP_INIT
+            // https://baidu.github.io/amis/zh-CN/docs/concepts/event-action#%E8%87%AA%E5%AE%9A%E4%B9%89-js
+            actionType: 'custom',
+            // 构造可执行的函数体，在函数体内可引用 context,doAction,event
+            script: `(${(() => {
+              document.body.classList.add('done');
+            }).toString()})()`
           }
         ]
       }

@@ -18,12 +18,20 @@
   -->
 
 <template>
-  <Site />
+  <div ref="domRef"></div>
 </template>
 
 <style scoped>
 </style>
 
 <script setup>
-import Site from './components/Site.vue'
+import * as App from '@/App';
+
+import { ref, onMounted } from 'vue';
+
+const domRef = ref(null);
+
+onMounted(() => {
+  App.mount(domRef.value);
+});
 </script>

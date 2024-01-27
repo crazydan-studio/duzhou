@@ -18,7 +18,7 @@
   -->
 
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
@@ -40,7 +40,7 @@
       }
 
       /** Start: 通过 ::after 显示开屏动画，再在渲染结束后隐藏动画，从而确保开屏动画可以渐进消失 */
-      body::after {
+      .loading::after {
         z-index: 10000;
         opacity: 1;
         transition: opacity 0.5s ease-out;
@@ -52,9 +52,8 @@
         overflow: hidden;
         position: absolute;
         top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        width: 100%;
+        height: 100%;
 
         content: '';
         background-image: var(--Spinner-bg);
@@ -63,15 +62,21 @@
         background-size: 12rem;
         background-repeat: no-repeat;
       }
+      .loading.done::after {
+        opacity: 0;
+      }
 
-      body > * {
+      .loading > * {
         opacity: 0;
         transition: opacity 0.5s ease-in;
+      }
+      .loading.done > * {
+        opacity: 1;
       }
       /** End: 在渲染结束前，都以透明方式隐藏元素 */
     </style>
   </head>
-  <body>
+  <body class="loading">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>

@@ -17,9 +17,14 @@
  * If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
  */
 
+import path from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import imageInliner from 'postcss-image-inliner';
+
+function absPath(...paths) {
+  return path.join(__dirname, ...paths);
+}
 
 // https://vitejs.dev/config/#conditional-config
 export default defineConfig(({ command, mode }) => {
@@ -29,6 +34,14 @@ export default defineConfig(({ command, mode }) => {
       // https://cn.vitejs.dev/config/server-options#server-proxy
       proxy: {
         '/graphql': 'http://localhost:8080'
+      }
+    },
+    resolve: {
+      // https://stackoverflow.com/questions/66043612/vue3-vite-project-alias-src-to-not-working#answer-70251354
+      alias: {
+        '@/': absPath('./src/'),
+        '@amis/': absPath('./src/amis/'),
+        '@components/': absPath('./src/components/')
       }
     },
     css: {
