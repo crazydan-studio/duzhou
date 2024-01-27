@@ -2,6 +2,7 @@
   "recommendations": [
     "Vue.volar",
     "Vue.vscode-typescript-vue-plugin",
-    "psioniq.psi-header"
+    "psioniq.psi-header",
+    "christian-kohler.path-intellisense"
   ]
 }
