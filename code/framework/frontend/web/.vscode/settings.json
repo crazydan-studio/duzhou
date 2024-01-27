@@ -57,8 +57,6 @@
     }
   ],
   "path-intellisense.mappings": {
-    "@": "${workspaceRoot}/src",
-    "@amis": "${workspaceRoot}/src/amis",
-    "@components": "${workspaceRoot}/src/components"
+    "@": "${workspaceRoot}/src"
   }
 }

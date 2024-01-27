@@ -39,9 +39,7 @@ export default defineConfig(({ command, mode }) => {
     resolve: {
       // https://stackoverflow.com/questions/66043612/vue3-vite-project-alias-src-to-not-working#answer-70251354
       alias: {
-        '@/': absPath('./src/'),
-        '@amis/': absPath('./src/amis/'),
-        '@components/': absPath('./src/components/')
+        '@/': absPath('./src/')
       }
     },
     css: {
