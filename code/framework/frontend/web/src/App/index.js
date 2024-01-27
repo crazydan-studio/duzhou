@@ -25,53 +25,18 @@ import 'amis/sdk/iconfont.css';
 // https://baidu.github.io/amis/zh-CN/style/index
 import 'amis/lib/helper.css';
 
+import '@/amis/components/Site';
+
 const amis = amisRequire('amis/embed');
 
-export function mount(dom) {
-  const amisJSON = {
-    type: 'app',
-    brandName: '渡舟平台',
-    logo: '/logo.svg',
-    onEvent: {
-      init: {
-        actions: [
-          {
-            // https://baidu.github.io/amis/zh-CN/docs/concepts/event-action#%E8%87%AA%E5%AE%9A%E4%B9%89-js
-            actionType: 'custom',
-            // 构造可执行的函数体，在函数体内可引用 context,doAction,event
-            script: `(${(() => {
-              document.body.classList.add('done');
-            }).toString()})()`
-          }
-        ]
-      }
-    },
-    pages: [
-      {
-        label: '分组1',
-        children: [
-          {
-            label: '父页面',
-            url: '/parent',
-            children: [
-              {
-                label: '子页面',
-                url: 'pageA',
-                schema: {
-                  type: 'page',
-                  title: 'Page A'
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  };
+export async function mount(dom) {
+  const site = await fetch('/mock/login.page.json')
+    .then((resp) => resp.json())
+    .then(({ data }) => data);
 
-  const amisScoped = amis.embed(
+  amis.embed(
     dom,
-    amisJSON,
+    site,
     {},
     {
       theme: 'antd'
