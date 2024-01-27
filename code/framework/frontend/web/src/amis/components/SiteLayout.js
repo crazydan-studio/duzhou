@@ -17,29 +17,33 @@
  * If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
  */
 
-import 'amis/sdk/sdk.js';
-//
-import 'amis/lib/themes/antd.css';
-import 'amis/sdk/iconfont.css';
-// 全局的类 tailwindcss 风格的原子样式
-// https://baidu.github.io/amis/zh-CN/style/index
-import 'amis/lib/helper.css';
+import { amisLib, React } from '@/amis/sdk';
 
-import '@/amis/components/Site';
+// https://react.dev/reference/react/Component
+/**
+ * <pre>
+ * { type: 'site-layout',
+ *   className: 'w-full h-full',
+ *   body: { ... }
+ * }
+ * </pre>
+ */
+class SiteLayoutComponent extends React.Component {
+  componentDidMount() {
+    document.body.classList.add('done');
+  }
 
-const amis = amisRequire('amis/embed');
+  render() {
+    // https://github.com/baidu/amis/blob/master/packages/amis/src/renderers/Wrapper.tsx#L50
+    const { body, render, disabled, className } = this.props;
 
-export async function mount(dom) {
-  const site = await fetch('/mock/login.page.json')
-    .then((resp) => resp.json())
-    .then(({ data }) => data);
+    const $children = render('body', body, { disabled });
 
-  amis.embed(
-    dom,
-    site,
-    {},
-    {
-      theme: 'antd'
-    }
-  );
+    // https://react.dev/reference/react/createElement
+    return React.createElement('div', { className }, $children);
+  }
 }
+
+amisLib.Renderer({
+  test: /(^|\/)site-layout/
+})(SiteLayoutComponent);

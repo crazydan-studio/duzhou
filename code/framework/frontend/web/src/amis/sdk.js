@@ -17,10 +17,8 @@
  * If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
  */
 
-import { createApp } from 'vue';
+import 'amis/sdk/sdk';
 
-import App from '@/App.vue';
-
-import '@/main.css';
-
-createApp(App).mount('#app');
+export const amis = amisRequire('amis/embed');
+export const amisLib = amisRequire('amis');
+export const React = amisRequire('react');

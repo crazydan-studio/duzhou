@@ -22,6 +22,8 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import imageInliner from 'postcss-image-inliner';
 
+import pkg from './package.json';
+
 function absPath(...paths) {
   return path.join(__dirname, ...paths);
 }
@@ -53,6 +55,16 @@ export default defineConfig(({ command, mode }) => {
             filter: /^(background(?:-image)?)|(content)|(cursor)|(--.+-bg)/
           })
         ]
+      }
+    },
+    build: {
+      rollupOptions: {
+        treeshake: true,
+        output: {
+          manualChunks: {
+            [`${pkg.name}-amis-${pkg.version}`]: ['src/amis/index.js']
+          }
+        }
       }
     }
   };

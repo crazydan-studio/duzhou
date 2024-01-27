@@ -17,13 +17,31 @@
  * If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
  */
 
-body {
-  min-width: 320px;
-  min-height: 100vh;
-}
+import { amis } from '@/amis/sdk';
 
-#app,
-.amis-scope {
-  width: 100%;
-  height: 100%;
+import '@/amis/components/SiteLayout';
+
+import 'amis/lib/themes/antd.css';
+import 'amis/sdk/iconfont.css';
+// 全局的类 tailwindcss 风格的原子样式
+// https://baidu.github.io/amis/zh-CN/style/index
+import 'amis/lib/helper.css';
+
+export async function render({ el, layout, resources }) {
+  const data = (layout && (await layout(resources || []))) || {
+    type: 'page',
+    body: {
+      type: 'tpl',
+      tpl: 'No page'
+    }
+  };
+
+  amis.embed(
+    el,
+    data,
+    {},
+    {
+      theme: 'antd'
+    }
+  );
 }

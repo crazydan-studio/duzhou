@@ -17,12 +17,20 @@
  * If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
  */
 
-import 'amis/sdk/sdk.js';
-
-const amisLib = amisRequire('amis');
-const React = amisRequire('react');
+import { amisLib, React } from '@/amis/sdk';
 
 // https://react.dev/reference/react/Component
+/**
+ * <pre>
+ * { type: 'site',
+ *   title: '用户登录',
+ *   subTitle: '渡舟平台',
+ *   logo: '/logo.svg',
+ *   className: 'w-full h-full',
+ *   body: { ... }
+ * }
+ * </pre>
+ */
 class SiteComponent extends React.Component {
   componentDidMount() {
     document.body.classList.add('done');
