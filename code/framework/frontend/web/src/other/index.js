@@ -17,7 +17,8 @@
  * If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
  */
 
-import render from '@/amis/render';
+// 仅作为多引擎构建的示例
+import render from '@/other/render';
 
 // 从默认变量中获取配置，并直接调用渲染函数，
 // 从而支持非模块化调用

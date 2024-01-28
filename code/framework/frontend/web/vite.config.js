@@ -23,6 +23,7 @@ import vue from '@vitejs/plugin-vue';
 import imageInliner from 'postcss-image-inliner';
 
 import pkg from './package.json';
+import amisPkg from './node_modules/amis/package.json';
 
 function absPath(...paths) {
   return path.join(__dirname, ...paths);
@@ -41,7 +42,7 @@ export default defineConfig(({ command, mode }) => {
     resolve: {
       // https://stackoverflow.com/questions/66043612/vue3-vite-project-alias-src-to-not-working#answer-70251354
       alias: {
-        '@/': absPath('./src/')
+        '@/': absPath('src/')
       }
     },
     css: {
@@ -58,11 +59,66 @@ export default defineConfig(({ command, mode }) => {
       }
     },
     build: {
+      target: 'es2015',
       rollupOptions: {
         treeshake: true,
+        // 指定入口脚本名称
+        // https://rollupjs.org/configuration-options/#input
+        // https://vitejs.dev/guide/build.html#multi-page-app
+        input: {
+          // main: absPath('index.html'),
+          // 指定渲染引擎的构建产物名称：
+          // 源文件指向 html 以用于构建可以在 html 中直接引入的 js（处理了依赖和浏览器兼容问题）
+          // [`js/renderer-other-${pkg.version}`]: absPath('src/other/index.html'),
+          [`js/renderer-amis-${pkg.version}`]: absPath('src/amis/index.html')
+        },
         output: {
-          manualChunks: {
-            [`${pkg.name}-amis-${pkg.version}`]: ['src/amis/index.js']
+          // 入口脚本的位置
+          entryFileNames: '[name].js',
+          // 各个依赖模块独立打包，并放在 js 目录下
+          chunkFileNames: 'js/[name].js',
+          manualChunks(id) {
+            const libs = [
+              'amis-editor',
+              'monaco-editor',
+              'tinymce',
+              'codemirror',
+              'froala-editor',
+              'exceljs',
+              'xlsx',
+              'office-viewer',
+              'ant-design-vue'
+            ];
+            for (let lib of libs) {
+              if (id.includes('node_modules/' + lib + '/')) {
+                return 'lib/' + lib;
+              }
+            }
+
+            function include_any(libs) {
+              for (let lib of libs) {
+                if (id.includes('/node_modules/' + lib + '/')) {
+                  return true;
+                }
+              }
+              return false;
+            }
+
+            if (include_any(['echarts', 'zrender'])) {
+              return 'lib/' + 'echarts';
+            }
+
+            if (
+              include_any([
+                'amis',
+                'amis-ui',
+                'amis-formula',
+                'amis-core',
+                'video-react'
+              ])
+            ) {
+              return 'lib/' + `${amisPkg.name}-${amisPkg.version}`;
+            }
           }
         }
       }

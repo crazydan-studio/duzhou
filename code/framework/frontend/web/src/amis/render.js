@@ -17,9 +17,31 @@
  * If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
  */
 
-import render from '@/amis/render';
+import { amis } from '@/amis/sdk';
 
-// 从默认变量中获取配置，并直接调用渲染函数，
-// 从而支持非模块化调用
-const conf = window.__APP_SITE_CONFIG__ || { el: 'body' };
-render(conf);
+import '@/amis/components/SiteLayout';
+
+import 'amis/lib/themes/antd.css';
+import 'amis/sdk/iconfont.css';
+// 全局的类 tailwindcss 风格的原子样式
+// https://baidu.github.io/amis/zh-CN/style/index
+import 'amis/lib/helper.css';
+
+export default async function render({ el, layout, resources }) {
+  const data = (layout && (await layout(resources || []))) || {
+    type: 'page',
+    body: {
+      type: 'tpl',
+      tpl: 'No page'
+    }
+  };
+
+  amis.embed(
+    el,
+    data,
+    {},
+    {
+      theme: 'antd'
+    }
+  );
+}
