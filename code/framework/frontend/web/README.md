@@ -35,7 +35,8 @@ npm run dev
 
 ```bash
 npm install \
-    amis@6.0.0
+    amis@6.0.0 \
+    sass
 ```
 
 ## 参考

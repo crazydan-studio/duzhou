@@ -19,15 +19,14 @@
 
 import { amisLib, React } from '@/amis/sdk';
 
-// https://react.dev/reference/react/Component
 /**
  * <pre>
  * { type: 'site-layout',
- *   className: 'w-full h-full',
  *   body: { ... }
  * }
  * </pre>
  */
+// https://react.dev/reference/react/Component
 class SiteLayoutComponent extends React.Component {
   componentDidMount() {
     document.body.classList.add('done');
@@ -35,12 +34,9 @@ class SiteLayoutComponent extends React.Component {
 
   render() {
     // https://github.com/baidu/amis/blob/master/packages/amis/src/renderers/Wrapper.tsx#L50
-    const { body, render, disabled, className } = this.props;
+    const { body, render, disabled } = this.props;
 
-    const $children = render('body', body, { disabled });
-
-    // https://react.dev/reference/react/createElement
-    return React.createElement('div', { className }, $children);
+    return render('body', body, { disabled });
   }
 }
 

@@ -2,47 +2,56 @@
   "status": 0,
   "msg": "",
   "data": {
-    "type": "page",
-    "className": "w-1/4 h-auto",
-    "body": {
-      "type": "form",
-      "title": "用户登录",
-      "mode": "horizontal",
-      "body": [
-        {
-          "type": "input-text",
-          "name": "account",
-          "label": "帐号",
-          "required": true
-        },
-        {
-          "type": "input-password",
-          "name": "password",
-          "label": "密码",
-          "required": true
-        },
-        {
-          "type": "checkbox",
-          "name": "rememberMe",
-          "label": "记住登录"
-        }
-      ],
-      "actions": [
-        {
-          "type": "submit",
-          "label": "登录",
-          "level": "primary"
-        },
-        {
-          "type": "action",
-          "label": "注册",
-          "actionType": "dialog",
-          "dialog": {
-            "title": "用户注册",
-            "body": "注册新用户"
+    "type": "wrapper",
+    "className": "w-full h-full flex flex-col justify-center items-center",
+    "body": [
+      {
+        "type": "wrapper",
+        "className": "w-1/4 h-auto login-page",
+        "body": [
+          {
+            "type": "wrapper",
+            "className": "header",
+            "body": "<img class='logo' src='/logo.svg'/><h3 class='title'>用户登录</h3>"
+          },
+          {
+            "type": "form",
+            "className": "login-form",
+            "mode": "horizontal",
+            "body": [
+              {
+                "type": "input-text",
+                "name": "account",
+                "className": "input",
+                "required": true
+              },
+              {
+                "type": "input-password",
+                "name": "password",
+                "className": "input",
+                "required": true
+              },
+              {
+                "type": "checkbox",
+                "name": "rememberMe",
+                "label": "记住登录"
+              }
+            ],
+            "actions": [
+              {
+                "type": "submit",
+                "label": "登录",
+                "level": "primary"
+              }
+            ]
           }
-        }
-      ]
-    }
+        ]
+      },
+      {
+        "type": "wrapper",
+        "className": "footer",
+        "body": "<span>版权所有 © 2024 渡舟平台</span>"
+      }
+    ]
   }
 }
