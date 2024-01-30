@@ -69,14 +69,14 @@ export default defineConfig(({ command, mode }) => {
           // main: absPath('index.html'),
           // 指定渲染引擎的构建产物名称：
           // 源文件指向 html 以用于构建可以在 html 中直接引入的 js（处理了依赖和浏览器兼容问题）
-          // [`js/renderer-other-${pkg.version}`]: absPath('src/other/index.html'),
-          [`js/renderer-amis-${pkg.version}`]: absPath('src/amis/index.html')
+          // [`renderer-other-${pkg.version}`]: absPath('src/other/index.html'),
+          [`renderer-amis-${pkg.version}`]: absPath('src/amis/index.html')
         },
         output: {
           // 入口脚本的位置
-          entryFileNames: '[name].js',
+          entryFileNames: 'js/[name].js',
           // 各个依赖模块独立打包，并放在 js 目录下
-          chunkFileNames: 'js/[name].js',
+          chunkFileNames: 'js/lib/[name].js',
           manualChunks(id) {
             const libs = [
               'amis-editor',
@@ -91,7 +91,7 @@ export default defineConfig(({ command, mode }) => {
             ];
             for (let lib of libs) {
               if (id.includes('node_modules/' + lib + '/')) {
-                return 'lib/' + lib;
+                return lib;
               }
             }
 
@@ -105,7 +105,7 @@ export default defineConfig(({ command, mode }) => {
             }
 
             if (include_any(['echarts', 'zrender'])) {
-              return 'lib/' + 'echarts';
+              return 'echarts';
             }
 
             if (
@@ -117,7 +117,7 @@ export default defineConfig(({ command, mode }) => {
                 'video-react'
               ])
             ) {
-              return 'lib/' + `${amisPkg.name}-${amisPkg.version}`;
+              return `${amisPkg.name}-${amisPkg.version}`;
             }
           }
         }
