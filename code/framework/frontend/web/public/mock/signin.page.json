@@ -36,9 +36,24 @@
                 "required": true
               },
               {
-                "type": "checkbox",
-                "name": "rememberMe",
-                "label": "记住登录"
+                "type": "flex",
+                "justify": "space-between",
+                "alignItems": "center",
+                "items": [
+                  {
+                    "type": "checkbox",
+                    "name": "rememberMe",
+                    "className": "checkbox m-0 p-0",
+                    "option": "记住登录"
+                  },
+                  {
+                    "_": "Note: 链接也是一个 Site",
+                    "type": "link",
+                    "className": "reset-link",
+                    "href": "/signin/password/reset",
+                    "body": "找回密码？"
+                  }
+                ]
               }
             ],
             "actions": [
@@ -52,7 +67,8 @@
           {
             "type": "link",
             "href": "/signup",
-            "body": "百度一下，你就知道"
+            "blank": false,
+            "body": "还没有帐号？点此注册一个"
           }
         ]
       },
