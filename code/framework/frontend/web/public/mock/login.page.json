@@ -3,11 +3,11 @@
   "msg": "",
   "data": {
     "type": "wrapper",
-    "className": "w-full h-full flex flex-col justify-center items-center",
+    "className": "site-page w-full h-full flex flex-col justify-center items-center",
     "body": [
       {
         "type": "wrapper",
-        "className": "w-1/4 h-auto login-page",
+        "className": "login-page",
         "body": [
           {
             "type": "wrapper",
@@ -23,12 +23,16 @@
                 "type": "input-text",
                 "name": "account",
                 "className": "input",
+                "placeholder": "请输入帐号...",
+                "clearable": true,
                 "required": true
               },
               {
                 "type": "input-password",
                 "name": "password",
                 "className": "input",
+                "placeholder": "请输入密码...",
+                "clearable": true,
                 "required": true
               },
               {
@@ -50,7 +54,7 @@
       {
         "type": "wrapper",
         "className": "footer",
-        "body": "<span>版权所有 © 2024 渡舟平台</span>"
+        "body": "<span>版权所有 © 2024 <a target='_blank' href='https://duzhou.crazydan.io'>渡舟平台</a></span>"
       }
     ]
   }
