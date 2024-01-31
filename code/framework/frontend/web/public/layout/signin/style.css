@@ -119,10 +119,6 @@ a {
   margin-top: 2rem;
 }
 
-.signin-form .input label {
-  display: none;
-}
-
 /* :focus-within 设置子孙节点聚焦时，当前节点的样式 */
 .signin-form .input [class*='-Form-control']:focus-within {
   border-color: #79a6fe;
@@ -142,6 +138,10 @@ a {
   border: none;
   background-color: transparent;
   box-shadow: none;
+}
+
+.signin-form .input [class*='-Form-control'].error {
+  border-color: #f23d3d;
 }
 
 .signin-form .input .InputText-clear svg,
@@ -211,4 +211,24 @@ a {
 [type="submit"]:not(:disabled):not(.is-disabled):hover,
 [type="submit"]:not(:disabled):not(.is-disabled):hover:active {
   background: #5d33e6;
+}
+
+[class*='-Form-restError'] {
+  background: #f23d3d;
+  text-align: center;
+  width: 100%;
+  padding: 0.25rem;
+  border: 0;
+  border-radius: 5px;
+  margin: 1rem 0 0 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+[class*='-Toast-wrap']>* {
+  border: none;
+  background-color: #262e49;
+  color: #fff;
+  font-size: .8rem;
+  box-shadow: #191f35;
 }

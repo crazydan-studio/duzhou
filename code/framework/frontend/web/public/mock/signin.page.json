@@ -18,6 +18,12 @@
             "type": "form",
             "className": "signin-form",
             "mode": "horizontal",
+            "rules": [
+              {
+                "rule": "!!data.account && !!data.password",
+                "message": "帐号或密码不能为空"
+              }
+            ],
             "body": [
               {
                 "type": "input-text",
@@ -25,7 +31,7 @@
                 "className": "input",
                 "placeholder": "请输入帐号...",
                 "clearable": true,
-                "required": true
+                "label": false
               },
               {
                 "type": "input-password",
@@ -33,7 +39,7 @@
                 "className": "input",
                 "placeholder": "请输入密码...",
                 "clearable": true,
-                "required": true
+                "label": false
               },
               {
                 "type": "flex",
