@@ -7,7 +7,7 @@
     "body": [
       {
         "type": "wrapper",
-        "className": "login-page",
+        "className": "signin-page",
         "body": [
           {
             "type": "wrapper",
@@ -16,7 +16,7 @@
           },
           {
             "type": "form",
-            "className": "login-form",
+            "className": "signin-form",
             "mode": "horizontal",
             "body": [
               {
@@ -48,6 +48,11 @@
                 "level": "primary"
               }
             ]
+          },
+          {
+            "type": "link",
+            "href": "/signup",
+            "body": "百度一下，你就知道"
           }
         ]
       },

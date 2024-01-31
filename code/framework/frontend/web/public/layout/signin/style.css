@@ -61,7 +61,7 @@
   --Form-item-color: #dfdeee;
 }
 
-.login-page {
+.signin-page {
   margin: 0;
   min-width: 30rem;
   text-align: center;
@@ -69,7 +69,7 @@
   border-radius: 9px;
   border-top: 10px solid #79a6fe;
   border-bottom: 10px solid #8bd17c;
-  box-shadow: 1px 1px 108.8px 19.2px rgb(25, 31, 53);
+  box-shadow: 1px 1px 108.8px 19.2px #191f35;
 
   --Panel-bg: transparent;
   --Panel-heading-bg: transparent;
@@ -106,38 +106,37 @@
   margin-top: 2rem;
 }
 
-.login-form .input label {
+.signin-form .input label {
   display: none;
 }
 
 /* :focus-within 设置子孙节点聚焦时，当前节点的样式 */
-.login-form .input [class*='-Form-control']:focus-within {
-  border-color: #79A6FE;
+.signin-form .input [class*='-Form-control']:focus-within {
+  border-color: #79a6fe;
 }
 
-.login-form .input [class*='-Form-control'] {
+.signin-form .input [class*='-Form-control'] {
   background: #262e49;
   /* 边框占位，以避免聚焦时出现高度变化 */
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 6px 10px;
   outline: none;
-  color: #d6d6d6;
   transition: all .2s ease-out;
 }
 
-.login-form .input [class*='-Form-control'] [class*='-TextControl-input'] {
+.signin-form .input [class*='-Form-control'] [class*='-TextControl-input'] {
   border: none;
   background-color: transparent;
   box-shadow: none;
 }
 
-.login-form .input .InputText-clear svg,
-.login-form .input [class*='-TextControl-revealPassword'] svg {
+.signin-form .input .InputText-clear svg,
+.signin-form .input [class*='-TextControl-revealPassword'] svg {
   transition: all .2s ease-out;
 }
 
-.login-form .input [class*='-TextControl-revealPassword'] svg:hover {
+.signin-form .input [class*='-TextControl-revealPassword'] svg:hover {
   fill: var(--input-clearable-hover-color);
   color: var(--input-clearable-hover-color);
 }
