@@ -22,8 +22,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="%VITE_site_logoImage%" />
-    <title>%VITE_site_subTitle% | %VITE_site_title%</title>
+    <link rel="icon" href="<%- site_logoImage %>" />
+    <title><%- site_subTitle %> | <%- site_title %></title>
 
     <style>
       * {
@@ -38,7 +38,7 @@
         min-height: 0;
         /* 修改默认的 AMIS 加载动画: https://baidu.github.io/amis/zh-CN/style/css-vars#%E5%9B%BE%E7%89%87 */
         /* 通过插件 postcss-image-inliner 进行内联替换：文件路径为项目根路径的相对地址 */
-        --Spinner-bg: url(%VITE_site_loadingImage%);
+        --Spinner-bg: url(<%- site_loadingImage %>);
         --body-bg: #1d243d;
       }
 
@@ -86,32 +86,13 @@
       /** End: 在渲染结束前，都以透明方式隐藏元素 */
     </style>
 
-    <script>
-      // Note：最终由服务端通过 Nop Xpl 构造并填充
-      window.__APP_SITE_CONFIG__ = {
-        el: '#app',
-        layout: async ([form]) => {
-          return {
-            type: 'site-layout',
-            // 单页面内嵌模式
-            body: await fetch(form.url)
-              .then((resp) => resp.json())
-              .then(({ data }) => data)
-          };
-        },
-        resources: [
-          {
-            id: 'signin-form',
-            url: '/mock/signin.page.json'
-          }
-        ]
-      };
-    </script>
+    <!-- Note：最终由服务端通过 Nop Xpl 构造并填充 -->
+    <%- scripts %>
   </head>
   <body class="loading">
     <div id="app"></div>
     <!-- Note：最终由服务端通过 Nop Xpl 构造并填充 -->
-    <link rel="stylesheet" href="/layout/signin/style.css" />
+    <%- styles %>
     <!-- Note：构建后，该节点会被放到 head 节点的末尾 -->
     <script type="module" src="/src/amis/index.js"></script>
   </body>

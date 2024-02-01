@@ -21,6 +21,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import imageInliner from 'postcss-image-inliner';
+import virtualHtml from 'vite-plugin-virtual-html';
 
 import pkg from './package.json';
 import amisPkg from './node_modules/amis/package.json';
@@ -32,7 +33,6 @@ function absPath(...paths) {
 // https://vitejs.dev/config/#conditional-config
 export default defineConfig(({ command, mode }) => {
   return {
-    plugins: [vue()],
     server: {
       // https://cn.vitejs.dev/config/server-options#server-proxy
       proxy: {
@@ -45,6 +45,7 @@ export default defineConfig(({ command, mode }) => {
         '@/': absPath('src/')
       }
     },
+    plugins: [vue(), ...(mode === 'development' ? getDevPlugins() : [])],
     css: {
       // https://cn.vitejs.dev/config/shared-options#css-postcss
       postcss: {
@@ -77,51 +78,82 @@ export default defineConfig(({ command, mode }) => {
           entryFileNames: 'js/[name].js',
           // 各个依赖模块独立打包，并放在 js 目录下
           chunkFileNames: 'js/lib/[name].js',
-          manualChunks(id) {
-            const libs = [
-              'amis-editor',
-              'monaco-editor',
-              'tinymce',
-              'codemirror',
-              'froala-editor',
-              'exceljs',
-              'xlsx',
-              'office-viewer',
-              'ant-design-vue'
-            ];
-            for (let lib of libs) {
-              if (id.includes('node_modules/' + lib + '/')) {
-                return lib;
-              }
-            }
-
-            function include_any(libs) {
-              for (let lib of libs) {
-                if (id.includes('/node_modules/' + lib + '/')) {
-                  return true;
-                }
-              }
-              return false;
-            }
-
-            if (include_any(['echarts', 'zrender'])) {
-              return 'echarts';
-            }
-
-            if (
-              include_any([
-                'amis',
-                'amis-ui',
-                'amis-formula',
-                'amis-core',
-                'video-react'
-              ])
-            ) {
-              return `${amisPkg.name}-${amisPkg.version}`;
-            }
-          }
+          manualChunks: getLibChunks
         }
       }
     }
   };
 });
+
+function getDevPlugins() {
+  return [
+    // https://github.com/windsonR/vite-plugin-virtual-html?tab=readme-ov-file#usage
+    // https://github.com/windsonR/vite-plugin-virtual-html/blob/64a3f8f/vite.config.ts
+    virtualHtml({
+      indexPage: 'main',
+      data: {
+        site_title: '渡舟平台',
+        site_logoImage: '/logo.svg',
+        site_loadingImage: './public/loading.svg'
+      },
+      pages: {
+        main: {
+          template: '/public/template.html',
+          data: {
+            site_subTitle: '门户',
+            styles: '<link rel="stylesheet" href="/pages/main/style.css"/>',
+            scripts: '<script src="/pages/main/config.js"></script>'
+          }
+        },
+        // signin/ -> /signin/
+        // signin/index -> /signin/
+        'signin/': {
+          template: '/public/template.html',
+          data: {
+            site_subTitle: '用户登录',
+            styles: '<link rel="stylesheet" href="/pages/signin/style.css"/>',
+            scripts: '<script src="/pages/signin/config.js"></script>'
+          }
+        }
+      }
+    })
+  ];
+}
+
+function getLibChunks(id) {
+  const libs = [
+    'amis-editor',
+    'monaco-editor',
+    'tinymce',
+    'codemirror',
+    'froala-editor',
+    'exceljs',
+    'xlsx',
+    'office-viewer',
+    'ant-design-vue'
+  ];
+  for (let lib of libs) {
+    if (id.includes('node_modules/' + lib + '/')) {
+      return lib;
+    }
+  }
+
+  function include_any(libs) {
+    for (let lib of libs) {
+      if (id.includes('/node_modules/' + lib + '/')) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  if (include_any(['echarts', 'zrender'])) {
+    return 'echarts';
+  }
+
+  if (
+    include_any(['amis', 'amis-ui', 'amis-formula', 'amis-core', 'video-react'])
+  ) {
+    return `${amisPkg.name}-${amisPkg.version}`;
+  }
+}

@@ -56,7 +56,7 @@
                     "_": "Note: 链接也是一个 Site",
                     "type": "link",
                     "className": "reset-link",
-                    "href": "/signin/password/reset",
+                    "href": "/signin/password/reset/",
                     "body": "找回密码？"
                   }
                 ]
@@ -72,7 +72,7 @@
           },
           {
             "type": "link",
-            "href": "/signup",
+            "href": "/signup/",
             "blank": false,
             "body": "还没有帐号？点此注册一个"
           }
