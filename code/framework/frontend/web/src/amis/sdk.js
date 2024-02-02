@@ -22,3 +22,5 @@ import 'amis/sdk/sdk';
 export const amis = amisRequire('amis/embed');
 export const amisLib = amisRequire('amis');
 export const React = amisRequire('react');
+
+export const pathRegex = amisRequire('path-to-regexp');

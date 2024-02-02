@@ -90,21 +90,13 @@ function getDevPlugins() {
     // https://github.com/windsonR/vite-plugin-virtual-html?tab=readme-ov-file#usage
     // https://github.com/windsonR/vite-plugin-virtual-html/blob/64a3f8f/vite.config.ts
     virtualHtml({
-      indexPage: 'main',
+      indexPage: 'signin/',
       data: {
         site_title: '渡舟平台',
         site_logoImage: '/logo.svg',
         site_loadingImage: './public/loading.svg'
       },
       pages: {
-        main: {
-          template: '/public/template.html',
-          data: {
-            site_subTitle: '门户',
-            styles: '<link rel="stylesheet" href="/pages/main/style.css"/>',
-            scripts: '<script src="/pages/main/config.js"></script>'
-          }
-        },
         // signin/ -> /signin/
         // signin/index -> /signin/
         'signin/': {
@@ -113,6 +105,14 @@ function getDevPlugins() {
             site_subTitle: '用户登录',
             styles: '<link rel="stylesheet" href="/pages/signin/style.css"/>',
             scripts: '<script src="/pages/signin/config.js"></script>'
+          }
+        },
+        'admin/': {
+          template: '/public/template.html',
+          data: {
+            site_subTitle: '后台管理',
+            styles: '<link rel="stylesheet" href="/pages/admin/style.css"/>',
+            scripts: '<script src="/pages/admin/config.js"></script>'
           }
         }
       }

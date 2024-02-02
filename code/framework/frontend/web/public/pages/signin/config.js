@@ -2,7 +2,7 @@ window.__APP_SITE_CONFIG__ = {
   el: '#app',
   layout: async ([form]) => {
     return {
-      type: 'site-layout',
+      type: 'site',
       // 单页面内嵌模式
       body: await fetch(form.url)
         .then((resp) => resp.json())

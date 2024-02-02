@@ -17,6 +17,7 @@
           {
             "type": "form",
             "className": "signin-form",
+            "redirect": "@redirect:/admin/",
             "mode": "horizontal",
             "rules": [
               {

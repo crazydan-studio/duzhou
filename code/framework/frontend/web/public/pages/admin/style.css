@@ -17,29 +17,5 @@
  * If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
  */
 
-import { amisLib, React } from '@/amis/sdk';
+/* 样式参考:  */
 
-/**
- * <pre>
- * { type: 'site',
- *   body: { ... }
- * }
- * </pre>
- */
-// https://react.dev/reference/react/Component
-class SiteLayoutComponent extends React.Component {
-  componentDidMount() {
-    document.body.classList.add('done');
-  }
-
-  render() {
-    // https://github.com/baidu/amis/blob/master/packages/amis/src/renderers/Wrapper.tsx#L50
-    const { body, render, disabled, defaultData: data } = this.props;
-
-    return render('body', body, { disabled, data });
-  }
-}
-
-amisLib.Renderer({
-  test: /(^|\/)site/
-})(SiteLayoutComponent);
