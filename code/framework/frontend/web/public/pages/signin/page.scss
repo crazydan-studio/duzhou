@@ -1,0 +1,199 @@
+/*
+ * 渡舟平台 - 致力于构建自运维、自监控、可演化的全功能型应用平台
+ * Copyright (C) 2024 Crazydan Studio <https://studio.crazydan.org>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.
+ * If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
+ */
+
+/* 样式参考: https://codepen.io/lordgamer2354/embed/NEroLg */
+
+.header {
+  padding: 2rem 0 0 0;
+
+  .title {
+    color: #5c6bc0;
+    font-size: 1.5rem;
+  }
+  .logo {
+    border: none;
+    padding: 0;
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+.footer {
+  margin-top: 2rem;
+}
+
+[class*='-Toast-wrap'] > * {
+  border: none;
+  background-color: #262e49;
+  color: #fff;
+  font-size: 0.8rem;
+  box-shadow: #191f35;
+}
+
+.signin-page {
+  margin: 0;
+  min-width: 30rem;
+  text-align: center;
+  background-color: #212942;
+  border-radius: 9px;
+  border-top: 10px solid var(--input-active-border-color);
+  border-bottom: 10px solid #8bd17c;
+  box-shadow: 1px 1px 108.8px 19.2px #191f35;
+
+  --Panel-bg: transparent;
+  --Panel-footerBg: transparent;
+  --Panel-borderWidth: 0;
+  --Panel-heading-top-border-width: 0;
+  --Panel-heading-left-border-width: 0;
+  --Panel-heading-right-border-width: 0;
+  --Panel-heading-bottom-border-width: 0;
+  --Panel-footer-top-border-width: 0;
+  --Panel-footer-left-border-width: 0;
+  --Panel-footer-right-border-width: 0;
+  --Panel-footer-bottom-border-width: 0;
+  --input-default-active-bg-color: transparent;
+  --input-default-active-shadow: none;
+  --input-password-view-icon-size: 1.5rem;
+  --input-password-invisible-icon-size: var(--input-password-view-icon-size);
+  --input-password-view-icon-color: var(--text--muted-color);
+  --input-password-invisible-icon-color: var(--input-password-view-icon-color);
+  --input-clearable-icon-size: 1rem;
+  --input-clearable-default-color: var(--text--muted-color);
+  --input-clearable-active-color: var(--input-default-default-color);
+  --input-clearable-hover-color: var(--input-clearable-active-color);
+  --Checkbox-onHover-color: var(--input-active-border-color);
+  --checkbox-checked-hover-bg-color: var(--Checkbox-onHover-color);
+
+  [class*='-Panel-heading'] {
+    display: none;
+  }
+
+  [data-role='checkbox'] {
+    --button-primary-hover-bg-color: var(--input-active-border-color);
+  }
+
+  [data-role='checkbox'] > i {
+    border: 2px solid #464d64;
+    border-radius: 2px;
+    transition: all 0.2s ease-out;
+  }
+
+  [data-role='checkbox'] > i,
+  [data-role='checkbox'] > i:hover,
+  [data-role='checkbox'] > i:active {
+    background: transparent;
+  }
+
+  [data-role='checkbox'] input:checked + i,
+  [data-role='checkbox'] input:checked + i:hover,
+  [data-role='checkbox'] input:checked + i:active,
+  [data-role='checkbox'] > i:hover,
+  [data-role='checkbox'] > i:active {
+    border: 2px solid var(--input-active-border-color);
+    border-radius: 2px;
+  }
+
+  [type='submit'],
+  [type='submit']:not(:disabled):not(.is-disabled):hover,
+  [type='submit']:not(:disabled):not(.is-disabled):hover:active {
+    border: 0;
+    color: #dfdeee;
+    box-shadow: none;
+  }
+
+  [type='submit'] {
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 100px;
+    padding: 1.5rem 0;
+    margin: 1rem 0 0 0 !important;
+    background: #7f5feb;
+    transition: 0.3s;
+  }
+
+  [type='submit']:not(:disabled):not(.is-disabled):hover,
+  [type='submit']:not(:disabled):not(.is-disabled):hover:active {
+    background: #5d33e6;
+  }
+
+  [class*='-Form-restError'] {
+    background: #f23d3d;
+    text-align: center;
+    width: 100%;
+    padding: 0.25rem;
+    border: 0;
+    border-radius: 5px;
+    margin: 1rem 0 0 0;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .signin-form {
+    /* :focus-within 设置子孙节点聚焦时，当前节点的样式 */
+    .input [class*='-Form-control']:focus-within {
+      border-color: #79a6fe;
+    }
+
+    .input [class*='-Form-control'] {
+      background: #262e49;
+      /* 边框占位，以避免聚焦时出现高度变化 */
+      border: 1px solid transparent;
+      border-radius: 5px;
+      padding: 6px 10px;
+      outline: none;
+      transition: all 0.2s ease-out;
+    }
+
+    .input [class*='-Form-control'] [class*='-TextControl-input'] {
+      border: none;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .input [class*='-Form-control'].error {
+      border-color: #f23d3d;
+    }
+
+    .input .InputText-clear svg,
+    .input [class*='-TextControl-revealPassword'] svg {
+      transition: all 0.2s ease-out;
+    }
+
+    .input [class*='-TextControl-revealPassword'] svg:hover {
+      fill: var(--input-clearable-hover-color);
+      color: var(--input-clearable-hover-color);
+    }
+
+    .checkbox > label {
+      width: auto;
+      margin-right: 0.5rem;
+    }
+
+    .checkbox > label,
+    .reset-link {
+      line-height: 1.35;
+      padding-top: calc(
+        (
+            var(--Form-input-height) - var(--Form-item-lineHeight) *
+              var(--Form-item-fontSize)
+          ) / 2
+      );
+    }
+  }
+}

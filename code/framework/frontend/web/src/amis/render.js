@@ -23,11 +23,11 @@ import history from 'history/hash';
 
 import '@/amis/components/SiteLayout';
 
-import 'amis/lib/themes/antd.css';
-import 'amis/sdk/iconfont.css';
 // 全局的类 tailwindcss 风格的原子样式
 // https://baidu.github.io/amis/zh-CN/style/index
-import 'amis/lib/helper.css';
+import 'amis/sdk/helper.css';
+import 'amis/sdk/iconfont.css';
+import 'amis/sdk/antd.css';
 
 export default async function render({ el, layout, resources }) {
   const app = (layout && (await layout(resources || []))) || {

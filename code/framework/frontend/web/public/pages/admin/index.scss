@@ -1,0 +1,68 @@
+/*
+ * 渡舟平台 - 致力于构建自运维、自监控、可演化的全功能型应用平台
+ * Copyright (C) 2024 Crazydan Studio <https://studio.crazydan.org>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.
+ * If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
+ */
+
+/* 样式参考: https://codepen.io/lordgamer2354/embed/NEroLg */
+
+/* Start：在内容溢出的情况下 justify-center 不能居中第一个子节点，
+ * 使得第一个子节点被遮挡，只能通过 margin auto 控制其子节点的居中
+ * https://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container#answer-33455342
+ */
+.flex.justify-center {
+  justify-content: unset;
+}
+
+.flex.flex-col.justify-center > *:first-child {
+  margin-top: auto !important;
+}
+
+.flex.flex-col.justify-center > *:last-child {
+  margin-bottom: auto !important;
+}
+
+.flex.flex-row.justify-center > *:first-child {
+  margin-left: auto !important;
+}
+
+.flex.flex-row.justify-center > *:last-child {
+  margin-right: auto !important;
+}
+
+/* End */
+
+:root {
+  --text-color: #78797d;
+  --link-color: #5c7fda;
+  --link-onHover-color: #5c6bc0;
+  --text--muted-color: #555e78;
+  --input-active-border-color: #79a6fe;
+  --input-default-default-color: #d6d6d6;
+  --Form-item-color: #dfdeee;
+  --checkbox-checkbox-default-text-color: var(--text-color);
+  --checkbox-checkbox-hover-text-color: var(--text-color);
+  --checkbox-checkbox-active-text-color: var(--text-color);
+}
+
+a {
+  transition: all 0.2s ease-out;
+}
+
+.site-page {
+  // 将 css 定义在一个确定的父类下
+  @import './page.scss';
+}

@@ -103,7 +103,9 @@ function getDevPlugins() {
           template: '/public/template.html',
           data: {
             site_subTitle: '用户登录',
-            styles: '<link rel="stylesheet" href="/pages/signin/style.css"/>',
+            // 指定 lang="scss" 以支持通过 sass-loader 载入编译后的 scss
+            styles:
+              '<style lang="scss">@import "/public/pages/signin/index.scss";</style>',
             scripts: '<script src="/pages/signin/config.js"></script>'
           }
         },
@@ -111,7 +113,8 @@ function getDevPlugins() {
           template: '/public/template.html',
           data: {
             site_subTitle: '后台管理',
-            styles: '<link rel="stylesheet" href="/pages/admin/style.css"/>',
+            styles:
+              '<style lang="scss">@import "/public/pages/admin/index.scss";</style>',
             scripts: '<script src="/pages/admin/config.js"></script>'
           }
         }
