@@ -15,8 +15,8 @@
 
 ## 项目
 
-- [基础框架](./framework/)
-- [平台](./platform/)
+- [基础框架](https://github.com/crazydan-studio/duzhou-framework)
+- [平台](https://github.com/crazydan-studio/duzhou-platform)
 
 ## 许可协议
 
