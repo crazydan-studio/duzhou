@@ -13,6 +13,11 @@
 
 - [平台文档](https://duzhou.crazydan.io/docs)
 
+## 项目
+
+- [基础框架](./framework/)
+- [平台](./platform/)
+
 ## 许可协议
 
 [LGPL 3.0](./LICENSE)
