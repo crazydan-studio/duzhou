@@ -1,7 +1,7 @@
 渡舟
 ======================
 
-<img src="https://duzhou.crazydan.io/img/logo.svg" width="172px" />
+<img src="https://github.com/crazydan-studio/duzhou.crazydan.io/blob/master/static/img/logo.svg?raw=true" width="172px" />
 
 ## 简介
 
