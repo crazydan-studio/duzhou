@@ -1,3 +1,6 @@
 [submodule "framework"]
 	path = framework
 	url = git@github.com:crazydan-studio/duzhou-framework.git
+[submodule "platform"]
+	path = platform
+	url = git@github.com:crazydan-studio/duzhou-platform.git
