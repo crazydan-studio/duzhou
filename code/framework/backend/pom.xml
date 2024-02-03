@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ 渡舟平台 - 致力于构建自运维、自监控、可演化的全功能型应用平台
+  ~ Copyright (C) 2024 Crazydan Studio <https://studio.crazydan.org>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Lesser General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public License
+  ~ along with this program.
+  ~ If not, see <https://www.gnu.org/licenses/lgpl-3.0.en.html#license-text>.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.crazydan.duzhou.framework</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>io.github.entropy-cloud</groupId>
+        <artifactId>nop-entropy</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.compilerVersion>${java.version}</maven.compiler.compilerVersion>
+        <!-- Note：待测试规范生效后移除test ignore配置 -->
+        <maven.test.skip>true</maven.test.skip>
+        <maven.test.failure.ignore>true</maven.test.failure.ignore>
+        <!-- End -->
+
+        <!-- 项目默认配置数据 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- End -->
+
+        <!-- 指定在对pom.xml过滤时仅对以".version"结尾的变量（需排除掉在非依赖管理中引用的变量）做替换，其余的保持不变 -->
+        <maven.filtering.properties.regex>^.*\.version$</maven.filtering.properties.regex>
+
+        <!-- 依赖版本号 -->
+        <nop-entropy.version>2.0.0-SNAPSHOT</nop-entropy.version>
+    </properties>
+
+    <modules>
+        <module>100.gateway</module>
+    </modules>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/crazydan-studio/duzhou-framework/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Releases Repository</name>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Snapshots Repository</name>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.entropy-cloud</groupId>
+            <artifactId>nop-autotest-junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+        </dependencies>
+    </dependencyManagement>
+</project>
